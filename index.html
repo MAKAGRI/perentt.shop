@@ -1,182 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAT Cargo VAD LLC</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            color: #333;
-        }
-        nav {
-            background: #000;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            padding: 80px 20px;
-            background: #111;
-            color: #fff;
-            min-height: 100vh;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .hero-text {
-            max-width: 500px;
-            padding: 20px;
-            animation: slideInLeft 1.5s ease;
-        }
-        .hero-text h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        .hero-text p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        .hero-img img {
-            max-width: 400px;
-            width: 100%;
-            border-radius: 10px;
-            animation: slideInRight 1.5s ease;
-        }
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
-        }
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-        .section p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555;
-        }
-        .contact {
-            background: #e9e9e9;
-            padding: 60px 20px;
-        }
-        footer {
-            background: #000;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideInLeft {
-            from { transform: translateX(-50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes slideInRight {
-            from { transform: translateX(50px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perentt Properties</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif;}
+    body {color: #333; background: #f8f9fb;}
+    header {background: #0b1b2a; color: #fff; padding: 20px; text-align: center;}
+    header h1 {font-size: 2rem; letter-spacing: 2px;}
+    nav {margin-top: 10px;}
+    nav a {color: #fff; text-decoration: none; margin: 0 10px; font-weight: 600;}
+    .hero {position: relative; background: url('https://cloud.famproperties.com/project/large/-188489-110459.jpg') center/cover no-repeat; height: 90vh; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center;}
+    .hero h2 {font-size: 3rem; background: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px;}
+    section {padding: 80px 10%; text-align: center;}
+    section h2 {font-size: 2rem; margin-bottom: 30px; color: #0b1b2a;}
+    .about p, .services p {font-size: 1.1rem; line-height: 1.6; max-width: 900px; margin: auto; color: #555;}
+    .gallery {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;}
+    .gallery img {width: 100%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s;}
+    .gallery img:hover {transform: scale(1.05);}
+    .contact-info {font-size: 1.1rem; color: #444; margin-top: 20px;}
+    footer {background: #0b1b2a; color: #fff; text-align: center; padding: 20px;}
+    footer p {font-size: 0.9rem;}
+    @media(max-width: 768px){
+      .hero h2 {font-size: 2rem; padding: 15px;}
+      section {padding: 50px 5%;}
+    }
+  </style>
 </head>
 <body>
 
+  <header>
+    <h1>PERENTT PROPERTIES</h1>
     <nav>
-        <div class="logo">PAT Cargo VAD LLC</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
     </nav>
+  </header>
 
-    <div class="hero" id="home">
-        <div class="hero-text">
-            <h1>PAT Cargo VAD LLC</h1>
-            <p>Your trusted partner in transportation and warehousing. We provide reliable cargo services and storage solutions to meet your business needs with efficiency and care.</p>
-        </div>
-        <div class="hero-img">
-            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=934&q=80" alt="Cargo Services">
-        </div>
+  <div class="hero">
+    <h2>Luxury Real Estate Projects</h2>
+  </div>
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>At Perentt Properties, we bring world-class real estate projects that redefine modern living. Our developments combine cutting-edge architecture, innovative designs, and premium amenities, ensuring every client finds a place they are proud to call home.</p>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <p>We specialize in property development, investment opportunities, and tailored real estate solutions. Whether you're looking for a luxury residence or a profitable investment, our team provides full guidance from start to finish.</p>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>Project Gallery</h2>
+    <div class="gallery">
+      <img src="https://dubai-property.investments/uploads/images/2023-05/CASA-CANAL-8.jpg" alt="Project 1">
+      <img src="https://avatars.mds.yandex.net/i?id=4531ac4263bd8710d3c128db9fb444e6_l-9046135-images-thumbs&ref=rim&n=13&w=1920&h=1080" alt="Project 2">
+      <img src="https://avatars.mds.yandex.net/i?id=9303f2e13746121a9920d7cd36a59a88_l-5285713-images-thumbs&ref=rim&n=13&w=3000&h=1856" alt="Project 3">
+      <img src="https://images.adsttc.com/media/images/55f8/1512/9644/1e98/8a00/00a7/medium_jpg/8h_image-by-big_07.jpg?1442321656" alt="Project 4">
     </div>
+  </section>
 
-    <div class="section" id="about">
-        <h2>About Us</h2>
-        <p>PAT Cargo VAD LLC is a Domestic LLC based in Arizona, offering specialized services in transportation and warehousing. With a focus on reliability and customer satisfaction, we have been serving businesses since 2021.</p>
-        <p><strong>Registered Address:</strong><br>
-        2902 W Sweetwater Ave, Apt 2190, Phoenix, AZ 85029, United States</p>
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p>Email: <strong>contact@perentt.shop</strong></p>
+      <p>Phone: <strong>+1 980-437-0683</strong></p>
     </div>
+  </section>
 
-    <div class="section contact" id="contact">
-        <h2>Contact Us</h2>
-        <p><strong>Email:</strong> <a href="mailto:contact@patcargovadllc.click">contact@patcargovadllc.click</a></p>
-        <p><strong>Agent Address:</strong><br>
-        2902 W Sweetwater Ave, Apt 2190, Phoenix, AZ 85029, United States</p>
-    </div>
-
-    <footer>
-        &copy; 2025 PAT Cargo VAD LLC. All rights reserved.
-    </footer>
-
-    <script>
-        // Intersection Observer for fade-in effect
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+  <footer>
+    <p>© 2025 Perentt Properties. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
